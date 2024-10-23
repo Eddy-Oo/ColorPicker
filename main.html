@@ -1,49 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Picker</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>Color Picker</h1>
+        <p>Select a color and see its different formats.</p>
+    </header>
 
-  <div class="container">
-    <h1>Color Picker</h1>
-    <input type="color" id="colorPicker" value="#ff5733">
+    <main>
+    <input type="color" id="colorInput" value="#ff5733">
+    <div class="color-display" id="colorDisplay"></div>
 
-    <div class="color-info">
-      <div class="color-display" id="colorBox"></div>
-
-      <div class="color-values">
-        <div class="color-format">
-          <label for="hexValue">Hex: </label>
-          <input type="text" id="hexValue" readonly>
-          <button onclick="copyToClipboard('hexValue')">Copy</button>
-        </div>
-
-        <div class="color-format">
-          <label for="rgbValue">RGB: </label>
-          <input type="text" id="rgbValue" readonly>
-          <button onclick="copyToClipboard('rgbValue')">Copy</button>
-        </div>
-
-        <div class="color-format">
-          <label for="hslValue">HSL: </label>
-          <input type="text" id="hslValue" readonly>
-          <button onclick="copyToClipboard('hslValue')">Copy</button>
-        </div>
-
-        <div class="color-format">
-          <label for="cssName">CSS Name: </label>
-          <input type="text" id="cssName" readonly>
-          <button onclick="copyToClipboard('cssName')">Copy</button>
-        </div>
-      </div>
+    <div>
+        <span>Hexdecimal:</span> <span id="hexValue">#ff5733</span>
+        <button class="copy-button" onclick="copyText('hexValue')">Copy</button>
     </div>
-  </div>
+    <div>
+        <span>RGB:</span> <span id="rgbValue">rgb(255, 87, 51)</span>
+        <button class="copy-button" onclick="copyText('rgbValue')">Copy</button>
+    </div>
+    <div>
+        <span>HSL:</span> <span id="hslValue">hsl(9, 100%, 60%)</span>
+        <button class="copy-button" onclick="copyText('hslValue')">Copy</button>
+    </div>
 
-  <script src="script.js"></script>
-
+    <div class="alert-msg" id="alertMsg">Text Copied</div>
+</main>
+    <footer>
+    <P> Eddy, 6609323</P>
+</footer>
 </body>
 </html>
+
